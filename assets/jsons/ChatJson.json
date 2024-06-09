@@ -1,0 +1,352 @@
+[
+    {
+        "_id": 1,
+        "Response": {
+            "Question": "What is React Native?",
+            "Answer": "React Native is a framework for building native apps using React."
+        }
+    },
+    {
+        "_id": 2,
+        "Response": {
+            "Question": "How does it work?",
+            "Answer": "It allows you to write JavaScript code and renders it as native components."
+        }
+    },
+    {
+        "_id": 3,
+        "Response": {
+            "Question": "Is it cross-platform?",
+            "Answer": "Yes, it works on both iOS and Android."
+        }
+    },
+    {
+        "_id": 4,
+        "Response": {
+            "Question": "Can I use existing libraries?",
+            "Answer": "Yes, you can use many existing libraries with React Native."
+        }
+    },
+    {
+        "_id": 5,
+        "Response": {
+            "Question": "What is hot reloading?",
+            "Answer": "Hot reloading allows you to see changes immediately without reloading the whole app."
+        }
+    },
+    {
+        "_id": 6,
+        "Response": {
+            "Question": "Is React Native suitable for complex apps?",
+            "Answer": "Yes, many complex apps use React Native, such as Facebook and Instagram."
+        }
+    },
+    {
+        "_id": 7,
+        "Response": {
+            "Question": "What language does React Native use?",
+            "Answer": "React Native uses JavaScript, specifically JSX."
+        }
+    },
+    {
+        "_id": 8,
+        "Response": {
+            "Question": "How do I style components?",
+            "Answer": "React Native uses a style system similar to CSS, but in JavaScript objects."
+        }
+    },
+    {
+        "_id": 9,
+        "Response": {
+            "Question": "Can I access native modules?",
+            "Answer": "Yes, you can write native modules to access platform-specific features in React Native."
+        }
+    },
+    {
+        "_id": 10,
+        "Response": {
+            "Question": "How do I handle navigation?",
+            "Answer": "You can use libraries like React Navigation to handle navigation in React Native apps."
+        }
+    },
+    {
+        "_id": 11,
+        "Response": {
+            "Question": "What is Expo?",
+            "Answer": "Expo is a framework and platform for universal React applications, providing a set of tools and services built around React Native."
+        }
+    },
+    {
+        "_id": 12,
+        "Response": {
+            "Question": "Can I debug React Native apps?",
+            "Answer": "Yes, you can use tools like React Native Debugger and Flipper for debugging."
+        }
+    },
+    {
+        "_id": 13,
+        "Response": {
+            "Question": "How do I manage state in React Native?",
+            "Answer": "You can use state management libraries like Redux, MobX, or React's Context API."
+        }
+    },
+    {
+        "_id": 14,
+        "Response": {
+            "Question": "What is Flexbox?",
+            "Answer": "Flexbox is a layout model that React Native uses for styling and positioning components."
+        }
+    },
+    {
+        "_id": 15,
+        "Response": {
+            "Question": "Can I use TypeScript with React Native?",
+            "Answer": "Yes, React Native supports TypeScript, which is a typed superset of JavaScript."
+        }
+    },
+    {
+        "_id": 16,
+        "Response": {
+            "Question": "How do I handle forms?",
+            "Answer": "You can use libraries like Formik and React Hook Form to handle forms in React Native."
+        }
+    },
+    {
+        "_id": 17,
+        "Response": {
+            "Question": "Is there a community around React Native?",
+            "Answer": "Yes, React Native has a large and active community that contributes to its development."
+        }
+    },
+    {
+        "_id": 18,
+        "Response": {
+            "Question": "What are some popular React Native components?",
+            "Answer": "Some popular components are View, Text, TextInput, ScrollView, and FlatList."
+        }
+    },
+    {
+        "_id": 19,
+        "Response": {
+            "Question": "How do I handle animations?",
+            "Answer": "You can use the Animated API or libraries like React Native Reanimated for animations."
+        }
+    },
+    {
+        "_id": 20,
+        "Response": {
+            "Question": "Can I use React Native for web development?",
+            "Answer": "Yes, with projects like React Native for Web, you can use React Native components for web development."
+        }
+    },
+    {
+        "_id": 21,
+        "Response": {
+            "Question": "How do I handle images?",
+            "Answer": "You can use the Image component to display images in React Native apps."
+        }
+    },
+    {
+        "_id": 22,
+        "Response": {
+            "Question": "Can I use CSS in React Native?",
+            "Answer": "React Native uses a similar styling approach to CSS but in JavaScript objects."
+        }
+    },
+    {
+        "_id": 23,
+        "Response": {
+            "Question": "What is a React Native bridge?",
+            "Answer": "The bridge is a communication layer between JavaScript and native code in React Native."
+        }
+    },
+    {
+        "_id": 24,
+        "Response": {
+            "Question": "How do I optimize performance?",
+            "Answer": "You can optimize performance by using techniques like lazy loading, memoization, and optimizing list rendering."
+        }
+    },
+    {
+        "_id": 25,
+        "Response": {
+            "Question": "What is a View in React Native?",
+            "Answer": "A View is a container that supports layout with Flexbox, style, and touch handling."
+        }
+    },
+    {
+        "_id": 26,
+        "Response": {
+            "Question": "How do I handle user input in React Native?",
+            "Answer": "You can use components like TextInput for text input and Touchable components for handling touch interactions."
+        }
+    },
+    {
+        "_id": 27,
+        "Response": {
+            "Question": "What is the difference between React and React Native?",
+            "Answer": "React is a JavaScript library for building user interfaces, primarily for the web, while React Native is a framework for building native apps using React."
+        }
+    },
+    {
+        "_id": 28,
+        "Response": {
+            "Question": "Can I use hooks in React Native?",
+            "Answer": "Yes, React Native supports hooks just like React for state and lifecycle management."
+        }
+    },
+    {
+        "_id": 29,
+        "Response": {
+            "Question": "How do I handle lists in React Native?",
+            "Answer": "You can use FlatList and SectionList components for efficient list rendering."
+        }
+    },
+    {
+        "_id": 30,
+        "Response": {
+            "Question": "What is Metro?",
+            "Answer": "Metro is the JavaScript bundler used by React Native to bundle your JavaScript code."
+        }
+    },
+    {
+        "_id": 31,
+        "Response": {
+            "Question": "Can I use async/await in React Native?",
+            "Answer": "Yes, you can use async/await for handling asynchronous operations in React Native."
+        }
+    },
+    {
+        "_id": 32,
+        "Response": {
+            "Question": "How do I handle network requests?",
+            "Answer": "You can use libraries like Axios or the Fetch API to handle network requests in React Native."
+        }
+    },
+    {
+        "_id": 33,
+        "Response": {
+            "Question": "What are React Native props?",
+            "Answer": "Props are inputs to components that allow data to be passed from one component to another."
+        }
+    },
+    {
+        "_id": 34,
+        "Response": {
+            "Question": "How do I handle errors?",
+            "Answer": "You can use error boundaries and try/catch blocks to handle errors in React Native."
+        }
+    },
+    {
+        "_id": 35,
+        "Response": {
+            "Question": "Can I use context in React Native?",
+            "Answer": "Yes, React Native supports the Context API for managing global state."
+        }
+    },
+    {
+        "_id": 36,
+        "Response": {
+            "Question": "What is a component?",
+            "Answer": "A component is a reusable piece of UI in a React Native app, defined as a JavaScript function or class."
+        }
+    },
+    {
+        "_id": 37,
+        "Response": {
+            "Question": "How do I handle navigation state?",
+            "Answer": "You can manage navigation state using libraries like React Navigation and its hooks."
+        }
+    },
+    {
+        "_id": 38,
+        "Response": {
+            "Question": "What is JSX?",
+            "Answer": "JSX is a syntax extension for JavaScript that allows you to write HTML-like code in React and React Native."
+        }
+    },
+    {
+        "_id": 39,
+        "Response": {
+            "Question": "Can I use custom fonts?",
+            "Answer": "Yes, you can add and use custom fonts in React Native by linking them in your project."
+        }
+    },
+    {
+        "_id": 40,
+        "Response": {
+            "Question": "How do I handle media playback?",
+            "Answer": "You can use libraries like React Native Video for video playback and React Native Sound for audio playback."
+        }
+    },
+    {
+        "_id": 41,
+        "Response": {
+            "Question": "Can I use SVG in React Native?",
+            "Answer": "Yes, you can use the react-native-svg library to render SVG images in React Native."
+        }
+    },
+    {
+        "_id": 42,
+        "Response": {
+            "Question": "How do I handle gestures?",
+            "Answer": "You can use libraries like React Native Gesture Handler for handling gestures in React Native."
+        }
+    },
+    {
+        "_id": 43,
+        "Response": {
+            "Question": "What is the React Native CLI?",
+            "Answer": "The React Native CLI is a command-line interface that helps in creating, building, and running React Native projects."
+        }
+    },
+    {
+        "_id": 44,
+        "Response": {
+            "Question": "Can I use state in functional components?",
+            "Answer": "Yes, you can use the useState hook to add state to functional components in React Native."
+        }
+    },
+    {
+        "_id": 45,
+        "Response": {
+            "Question": "How do I integrate third-party libraries?",
+            "Answer": "You can integrate third-party libraries by installing them via npm or yarn and linking them in your project."
+        }
+    },
+    {
+        "_id": 46,
+        "Response": {
+            "Question": "What is the difference between View and ScrollView?",
+            "Answer": "View is a basic container component, while ScrollView allows for scrollable content."
+        }
+    },
+    {
+        "_id": 47,
+        "Response": {
+            "Question": "Can I use native code?",
+            "Answer": "Yes, you can write custom native modules in Objective-C, Swift, or Java and use them in React Native."
+        }
+    },
+    {
+        "_id": 48,
+        "Response": {
+            "Question": "How do I handle updates?",
+            "Answer": "You can use the react-native-upgrade-helper and CodePush for managing updates."
+        }
+    },
+    {
+        "_id": 49,
+        "Response": {
+            "Question": "What are lifecycle methods?",
+            "Answer": "Lifecycle methods are special methods in class components that allow you to run code at different stages of a component's life."
+        }
+    },
+    {
+        "_id": 50,
+        "Response": {
+            "Question": "Can I use hooks in class components?",
+            "Answer": "No, hooks can only be used in functional components. For class components, use lifecycle methods."
+        }
+    }
+]

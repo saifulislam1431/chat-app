@@ -1,0 +1,73 @@
+import Paypal from '@/app/Screens/PaymentScreen/Paypal';
+import { Entypo } from '@expo/vector-icons';
+import axios from 'axios';
+import React from 'react';
+import { Alert, Modal, Text, TouchableOpacity, View } from 'react-native';
+
+const PaypalPaymentModal = ({ visible, setVisible }) => {
+    return (
+        <View style={{ flex: 1, justifyContent: "center", width: "100%" }}>
+            <Modal visible={visible} animationType="slide" transparent={true}>
+                <View style={{
+                    flex: 1,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    backgroundColor: 'rgba(0,0,0,0.5)'
+                }}>
+
+
+                    <View style={{
+                        flex: 1,
+                        justifyContent: 'flex-start',
+                        alignItems: 'center',
+                        backgroundColor: "#ffffff",
+                        padding: 20,
+                        width: '90%',
+                        maxHeight: "90%",
+                        borderRadius: 20
+                    }}>
+                        <TouchableOpacity onPress={() => setVisible(false)} style={{
+                            width: "100%",
+                            flexDirection: "row",
+                            justifyContent: "space-between"
+                        }}>
+                            <Text style={{
+                                fontSize: 24,
+                                fontFamily: "syneBold",
+                                color: "#0077b6"
+                            }}>Pay With Paypal</Text>
+                            <Text>
+                                <Entypo name="cross" color={"#FF1A1A"} size={34} />
+                            </Text>
+                        </TouchableOpacity>
+
+
+                        <View style={{
+                            marginTop: 30,
+                            flex: 1,
+                            width: "100%"
+                        }}>
+                            <Paypal onNonceRetrieved={async ({ nonce, deviceData }) => {
+                                try {
+                                    const response = await axios.post(`${HOST}/createPaymentTransactionByPaypal`, {
+                                        amount: 100, // Change to price gotten from your user
+                                        nonce: nonce,
+                                        deviceData: deviceData
+                                    });
+                                    const { isPaymentSuccessful, errorText } = response.data;
+                                    Alert.alert(isPaymentSuccessful ? "Payment successful" : `Payment error - ${errorText}`);
+                                } catch (error) {
+                                    console.error("Payment failed: ", error);
+                                    Alert.alert("Payment error", "An error occurred while processing the payment.");
+                                }
+                            }} />
+                        </View>
+                    </View>
+
+                </View>
+            </Modal>
+        </View>
+    );
+};
+
+export default PaypalPaymentModal;
