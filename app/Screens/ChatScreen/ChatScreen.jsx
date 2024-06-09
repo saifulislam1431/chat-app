@@ -4,6 +4,8 @@ import ChatItem from "@/components/ChatItem";
 import chatsData from "@/assets/jsons/ChatJson.json"
 import Icon from "react-native-vector-icons/FontAwesome"
 import Icon2 from "react-native-vector-icons/AntDesign"
+import Icon3 from "react-native-vector-icons/Entypo"
+import ChatProfileModal from "../../../components/Modals/ChatProfileModal"
 
 const ChatScreen = () => {
     const [chats, setChats] = useState([]);
@@ -12,6 +14,13 @@ const ChatScreen = () => {
     const [hasMoreChats, setHasMoreChats] = useState(true);
     const [inputHeight, setInputHeight] = useState(45);
     const [promptText, setPromptText] = useState("");
+    const [profileModal, setProfileModal] = useState(false);
+    const [userData, setUserData] = useState({
+        name: "Saiful Islam",
+        image: "../../../assets/images/profile1.png",
+        phone: "+88012345679",
+        bio: "Hey there! I am using Chat Zone."
+    })
 
     useEffect(() => {
         loadChats();
@@ -70,23 +79,61 @@ const ChatScreen = () => {
                     <Icon2 name="arrowleft" size={26} color="#0077b6" />
                 </TouchableOpacity>
 
-                <View>
+
+                <View style={{
+                    width: "100%",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    justifyContent: "space-between"
+                }}>
                     {/* Profile */}
                     <View style={{
                         flexDirection: "row",
                         alignItems: "center",
                         rowGap: 10,
+                        width: "70%"
                     }}>
-                        <Image
-                            style={{
-                                width: 60,
-                                height: 44,
-                                objectFit: "contain",
-                            }}
-                            source={require("../../../assets/images/profile1.png")}
-                        />
-                        <Text>Saiful Islam</Text>
+                        <TouchableOpacity onPress={() => setProfileModal(true)}>
+                            <Image
+                                style={{
+                                    width: 60,
+                                    height: 44,
+                                    objectFit: "contain",
+                                }}
+                                source={require("../../../assets/images/profile1.png")}
+                            />
+                        </TouchableOpacity>
+                        <View>
+                            <Text style={{
+                                fontSize: 17,
+                                fontFamily: "syneSemiBold",
+                                color: "#0077b6"
+                            }}>Saiful Islam</Text>
+
+                            <Text style={{
+                                fontSize: 16,
+                                fontFamily: "syne"
+                            }}>Online</Text>
+                        </View>
+                        <ChatProfileModal visible={profileModal} setVisible={setProfileModal} userData={userData} />
                     </View>
+
+                    <View style={{
+                        width: "23%",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        gap: 10
+                    }}>
+
+                        <TouchableOpacity>
+                            <Icon name="phone" size={26} color="#0077b6" />
+                        </TouchableOpacity>
+
+                        <TouchableOpacity>
+                            <Icon3 name="dots-three-vertical" size={26} color="#0077b6" />
+                        </TouchableOpacity>
+                    </View>
+
                 </View>
 
             </View>
