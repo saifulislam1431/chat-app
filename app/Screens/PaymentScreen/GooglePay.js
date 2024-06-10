@@ -3,7 +3,7 @@ import { View, StyleSheet, ActivityIndicator, Text } from 'react-native';
 import WebView from 'react-native-webview';
 import axios from 'axios';
 
-const HOST = "http://192.168.0.114:5000";
+const HOST = "https://braintree-server0-1.vercel.app";
 
 const Payment = ({ onNonceRetrieved }) => {
     const [loading, setLoading] = useState(true);
