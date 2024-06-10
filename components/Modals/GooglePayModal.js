@@ -1,10 +1,10 @@
-import Paypal from '@/app/Screens/PaymentScreen/Paypal';
+import GooglePay from '@/app/Screens/PaymentScreen/GooglePay';
 import { Entypo } from '@expo/vector-icons';
 import axios from 'axios';
 import React from 'react';
 import { Alert, Modal, Text, TouchableOpacity, View } from 'react-native';
 const HOST = "https://braintree-server0-1.vercel.app";
-const PaypalPaymentModal = ({ visible, setVisible }) => {
+const GooglePayPaymentModal = ({ visible, setVisible }) => {
     return (
         <View style={{ flex: 1, justifyContent: "center", width: "100%" }}>
             <Modal visible={visible} animationType="slide" transparent={true}>
@@ -14,8 +14,6 @@ const PaypalPaymentModal = ({ visible, setVisible }) => {
                     alignItems: 'center',
                     backgroundColor: 'rgba(0,0,0,0.5)'
                 }}>
-
-
                     <View style={{
                         flex: 1,
                         justifyContent: 'flex-start',
@@ -35,7 +33,7 @@ const PaypalPaymentModal = ({ visible, setVisible }) => {
                                 fontSize: 24,
                                 fontFamily: "syneBold",
                                 color: "#0077b6"
-                            }}>Pay With Paypal</Text>
+                            }}>Pay With GPay</Text>
                             <TouchableOpacity onPress={() => setVisible(false)}>
 
                                 <Text>
@@ -44,15 +42,14 @@ const PaypalPaymentModal = ({ visible, setVisible }) => {
                             </TouchableOpacity>
                         </View>
 
-
                         <View style={{
                             marginTop: 30,
                             flex: 1,
                             width: "100%"
                         }}>
-                            <Paypal onNonceRetrieved={async ({ nonce, deviceData }) => {
+                            <GooglePay onNonceRetrieved={async ({ nonce, deviceData }) => {
                                 try {
-                                    const response = await axios.post(`${HOST}/createPaymentTransactionByPaypal`, {
+                                    const response = await axios.post(`${HOST}/createPaymentTransactionByGooglePay`, {
                                         amount: 100, // Change to price gotten from your user
                                         nonce: nonce,
                                         deviceData: deviceData
@@ -66,11 +63,10 @@ const PaypalPaymentModal = ({ visible, setVisible }) => {
                             }} />
                         </View>
                     </View>
-
                 </View>
             </Modal>
         </View>
     );
 };
 
-export default PaypalPaymentModal;
+export default GooglePayPaymentModal;

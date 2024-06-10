@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import BraintreePayment from "../../../components/BraintreePayment"
 import PaymentScreen from '../PaymentScreen/PaymentScreen';
 import axios from 'axios';
-const HOST = "http://192.168.0.114:5000";
+const HOST = "https://braintree-server0-1.vercel.app";
 
 const WelcomeScreen = () => {
     const navigation = useNavigation()

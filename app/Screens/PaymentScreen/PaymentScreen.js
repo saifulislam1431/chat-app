@@ -6,12 +6,16 @@ import GooglePay from './GooglePay';
 import Paypal from './Paypal';
 import CardPaymentModal from "../../../components/Modals/CardPaymentModal"
 import PaypalPaymentModal from "../../../components/Modals/PaypalPaymentModal"
+import GooglePayModal from "../../../components/Modals/GooglePayModal"
+import ApplePayModal from "../../../components/Modals/ApplePayModal"
 
-const HOST = "http://192.168.0.114:5000";
+const HOST = "https://braintree-server0-1.vercel.app";
 
 const PaymentScreen = () => {
     const [cardModal, setCardModal] = useState(false);
     const [paypalModal, setPaypalModal] = useState(false);
+    const [googleModal, setGoogleModal] = useState(false);
+    const [appleModal, setAppleModal] = useState(false);
 
     return (
         <View style={styles.container}>
@@ -83,9 +87,46 @@ const PaymentScreen = () => {
                             Paypal
                         </Text>
                     </TouchableOpacity>
+
+
+                    <TouchableOpacity style={{
+                        borderRadius: 20,
+                        borderWidth: 1,
+                        borderColor: "#0077b6",
+                        alignItems: "center",
+                        paddingVertical: 5,
+                        paddingHorizontal: 20
+                    }} onPress={() => setGoogleModal(true)}>
+                        <Text style={{
+                            fontSize: 20,
+                            fontFamily: "barlowSemiBold",
+                            color: "#0077b6"
+                        }}>
+                            GPAY
+                        </Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={{
+                        borderRadius: 20,
+                        borderWidth: 1,
+                        borderColor: "#0077b6",
+                        alignItems: "center",
+                        paddingVertical: 5,
+                        paddingHorizontal: 20
+                    }} onPress={() => setAppleModal(true)}>
+                        <Text style={{
+                            fontSize: 20,
+                            fontFamily: "barlowSemiBold",
+                            color: "#0077b6"
+                        }}>
+                            Apple
+                        </Text>
+                    </TouchableOpacity>
                 </View>
                 <CardPaymentModal visible={cardModal} setVisible={setCardModal} />
                 <PaypalPaymentModal visible={paypalModal} setVisible={setPaypalModal} />
+                <GooglePayModal visible={googleModal} setVisible={setGoogleModal} />
+                <ApplePayModal visible={appleModal} setVisible={setAppleModal} />
             </View>
         </View>
     );

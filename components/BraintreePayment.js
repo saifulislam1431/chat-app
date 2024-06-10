@@ -11,7 +11,7 @@ const BraintreePayment = () => {
 
     useEffect(() => {
         // Fetch client token when the component mounts
-        axios.get('http://192.168.0.114:5000/client_token')
+        axios.get('https://braintree-server0-1.vercel.app/client_token')
             .then(response => {
                 setClientToken(response.data);
                 setLoading(false);
@@ -52,7 +52,7 @@ const BraintreePayment = () => {
             .then((result) => {
                 if (result.nonce) {
                     // Use the nonce to create a transaction on your server
-                    axios.post('http://192.168.0.114:5000/checkout', {
+                    axios.post('https://braintree-server0-1.vercel.app/checkout', {
                         nonce: result.nonce,
                         amount: '10.00', // Example amount, you can change it as needed
                     })

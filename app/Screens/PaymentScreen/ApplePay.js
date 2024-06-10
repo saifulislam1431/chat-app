@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { View, StyleSheet, ActivityIndicator, Text } from 'react-native';
 import WebView from 'react-native-webview';
 
-const HOST = "https://braintree-server0-1.vercel.app";
+const HOST = "http://192.168.0.114:5000";
 
-const Paypal = ({ onNonceRetrieved }) => {
+const ApplePay = ({ onNonceRetrieved }) => {
     const [loading, setLoading] = useState(true);
 
     return (
@@ -13,9 +13,9 @@ const Paypal = ({ onNonceRetrieved }) => {
                 fontSize: 24,
                 fontFamily: "syneSemiBold",
                 marginBottom: 20
-            }}>Please choose paypal payment option.</Text>
+            }}>Please choose Apple Pay payment option.</Text>
             <WebView
-                source={{ uri: `${HOST}/paypal` }}
+                source={{ uri: `${HOST}/applePay` }}
                 onLoad={() => setLoading(false)}
                 onMessage={(event) => {
                     const data = JSON.parse(event.nativeEvent.data);
@@ -44,4 +44,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Paypal;
+export default ApplePay;

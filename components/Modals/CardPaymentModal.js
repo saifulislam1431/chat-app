@@ -4,7 +4,7 @@ import axios from 'axios';
 import React from 'react';
 import { View, Modal, Text, TouchableOpacity, Alert } from 'react-native';
 
-const HOST = "http://192.168.0.114:5000";
+const HOST = "https://braintree-server0-1.vercel.app";
 
 
 const CardPaymentModal = ({ visible, setVisible }) => {
@@ -29,7 +29,9 @@ const CardPaymentModal = ({ visible, setVisible }) => {
                         maxHeight: "90%",
                         borderRadius: 20
                     }}>
-                        <TouchableOpacity onPress={() => setVisible(false)} style={{
+
+
+                        <View style={{
                             width: "100%",
                             flexDirection: "row",
                             justifyContent: "space-between"
@@ -39,14 +41,18 @@ const CardPaymentModal = ({ visible, setVisible }) => {
                                 fontFamily: "syneBold",
                                 color: "#0077b6"
                             }}>Pay With Card</Text>
-                            <Text>
-                                <Entypo name="cross" color={"#FF1A1A"} size={34} />
-                            </Text>
-                        </TouchableOpacity>
+                            <TouchableOpacity onPress={() => setVisible(false)}>
+
+                                <Text>
+                                    <Entypo name="cross" color={"#FF1A1A"} size={34} />
+                                </Text>
+                            </TouchableOpacity>
+                        </View>
 
                         <View style={{
                             marginTop: 30,
-                            flex: 1
+                            flex: 1,
+                            width: "100%"
                         }}>
                             <Payment
                                 onNonceRetrieved={async ({ nonce, deviceData }) => {

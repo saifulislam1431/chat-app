@@ -3,9 +3,9 @@ import { View, StyleSheet, ActivityIndicator, Text } from 'react-native';
 import WebView from 'react-native-webview';
 import axios from 'axios';
 
-const HOST = "http://192.168.0.114:5000";
+const HOST = "https://braintree-server0-1.vercel.app";
 
-const Payment = ({ onNonceRetrieved }) => {
+const GooglePay = ({ onNonceRetrieved }) => {
     const [loading, setLoading] = useState(true);
     const [clientToken, setClientToken] = useState(null);
 
@@ -31,12 +31,15 @@ const Payment = ({ onNonceRetrieved }) => {
     }
 
     return (
-        <View style={{ flex: 1, height: 500 }}>
-            <Text style={{ fontSize: 30, fontWeight: '500' }}>BrainTree Payment Integration</Text>
+        <View style={{ flex: 1, width: "100%" }}>
+            <Text style={{
+                fontSize: 24,
+                fontFamily: "syneSemiBold"
+            }}>Please Pay.</Text>
             <WebView
-                source={{ uri: `${HOST}/googlePay` }}
+                source={{ uri: `${HOST}/googlePay?client_token=${clientToken}&&amount=100` }}
                 onMessage={(event) => {
-                    console.log(event);
+                    // console.log(event);
                     onNonceRetrieved(JSON.parse(event.nativeEvent.data));
                 }}
             />
@@ -52,4 +55,5 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Payment;
+export default GooglePay;
+
