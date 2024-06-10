@@ -7,7 +7,7 @@ import Paypal from './Paypal';
 import CardPaymentModal from "../../../components/Modals/CardPaymentModal"
 import PaypalPaymentModal from "../../../components/Modals/PaypalPaymentModal"
 
-const HOST = "http://192.168.0.114:5000";
+const HOST = "https://braintree-server0-1.vercel.app";
 
 const PaymentScreen = () => {
     const [cardModal, setCardModal] = useState(false);
