@@ -4,7 +4,7 @@ import axios from 'axios';
 import React from 'react';
 import { View, Modal, Text, TouchableOpacity, Alert } from 'react-native';
 
-const HOST = "http://192.168.0.114:5000";
+const HOST = "https://braintree-server0-1.vercel.app";
 
 
 const CardPaymentModal = ({ visible, setVisible }) => {
