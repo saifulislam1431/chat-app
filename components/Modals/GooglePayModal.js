@@ -1,9 +1,11 @@
-import GooglePay from '@/app/Screens/PaymentScreen/GooglePay';
-import { Entypo } from '@expo/vector-icons';
-import axios from 'axios';
 import React from 'react';
 import { Alert, Modal, Text, TouchableOpacity, View } from 'react-native';
+import { Entypo } from '@expo/vector-icons';
+import axios from 'axios';
+import GooglePay from '@/app/Screens/PaymentScreen/GooglePay';
+
 const HOST = "https://braintree-server0-1.vercel.app";
+
 const GooglePayPaymentModal = ({ visible, setVisible }) => {
     return (
         <View style={{ flex: 1, justifyContent: "center", width: "100%" }}>
@@ -35,10 +37,7 @@ const GooglePayPaymentModal = ({ visible, setVisible }) => {
                                 color: "#0077b6"
                             }}>Pay With GPay</Text>
                             <TouchableOpacity onPress={() => setVisible(false)}>
-
-                                <Text>
-                                    <Entypo name="cross" color={"#FF1A1A"} size={34} />
-                                </Text>
+                                <Entypo name="cross" color={"#FF1A1A"} size={34} />
                             </TouchableOpacity>
                         </View>
 

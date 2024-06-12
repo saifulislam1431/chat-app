@@ -37,9 +37,8 @@ const GooglePay = ({ onNonceRetrieved }) => {
                 fontFamily: "syneSemiBold"
             }}>Please Pay.</Text>
             <WebView
-                source={{ uri: `${HOST}/googlePay?client_token=${clientToken}&&amount=100` }}
+                source={{ uri: `${HOST}/googlePay?client_token=${clientToken}&amount=100` }}
                 onMessage={(event) => {
-                    // console.log(event);
                     onNonceRetrieved(JSON.parse(event.nativeEvent.data));
                 }}
             />
@@ -56,4 +55,3 @@ const styles = StyleSheet.create({
 });
 
 export default GooglePay;
-
