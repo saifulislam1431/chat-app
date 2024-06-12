@@ -9,11 +9,7 @@ const ApplePay = ({ onNonceRetrieved }) => {
 
     return (
         <View style={{ flex: 1, width: "100%" }}>
-            <Text style={{
-                fontSize: 24,
-                fontFamily: "syneSemiBold",
-                marginBottom: 20
-            }}>Please choose Apple Pay payment option.</Text>
+            <Text style={{ fontSize: 24, fontFamily: "syneSemiBold", marginBottom: 20 }}>Please choose Apple Pay payment option.</Text>
             <WebView
                 source={{ uri: `${HOST}/applePay` }}
                 onLoad={() => setLoading(false)}

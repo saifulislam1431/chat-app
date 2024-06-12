@@ -8,48 +8,16 @@ const ApplePayPaymentModal = ({ visible, setVisible }) => {
     return (
         <View style={{ flex: 1, justifyContent: "center", width: "100%" }}>
             <Modal visible={visible} animationType="slide" transparent={true}>
-                <View style={{
-                    flex: 1,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    backgroundColor: 'rgba(0,0,0,0.5)'
-                }}>
-
-
-                    <View style={{
-                        flex: 1,
-                        justifyContent: 'flex-start',
-                        alignItems: 'center',
-                        backgroundColor: "#ffffff",
-                        padding: 20,
-                        width: '90%',
-                        maxHeight: "90%",
-                        borderRadius: 20
-                    }}>
-                        <View style={{
-                            width: "100%",
-                            flexDirection: "row",
-                            justifyContent: "space-between"
-                        }}>
-                            <Text style={{
-                                fontSize: 24,
-                                fontFamily: "syneBold",
-                                color: "#0077b6"
-                            }}>Pay With Apple</Text>
+                <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(0,0,0,0.5)' }}>
+                    <View style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center', backgroundColor: "#ffffff", padding: 20, width: '90%', maxHeight: "90%", borderRadius: 20 }}>
+                        <View style={{ width: "100%", flexDirection: "row", justifyContent: "space-between" }}>
+                            <Text style={{ fontSize: 24, fontFamily: "syneBold", color: "#0077b6" }}>Pay With Apple</Text>
                             <TouchableOpacity onPress={() => setVisible(false)}>
-
-                                <Text>
-                                    <Entypo name="cross" color={"#FF1A1A"} size={34} />
-                                </Text>
+                                <Text><Entypo name="cross" color={"#FF1A1A"} size={34} /></Text>
                             </TouchableOpacity>
                         </View>
 
-
-                        <View style={{
-                            marginTop: 30,
-                            flex: 1,
-                            width: "100%"
-                        }}>
+                        <View style={{ marginTop: 30, flex: 1, width: "100%" }}>
                             <ApplePay onNonceRetrieved={async ({ nonce, deviceData }) => {
                                 try {
                                     const response = await axios.post(`${HOST}/createPaymentTransactionByApplePay`, {
@@ -66,7 +34,6 @@ const ApplePayPaymentModal = ({ visible, setVisible }) => {
                             }} />
                         </View>
                     </View>
-
                 </View>
             </Modal>
         </View>
