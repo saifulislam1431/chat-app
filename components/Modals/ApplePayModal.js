@@ -3,7 +3,7 @@ import { Entypo } from '@expo/vector-icons';
 import axios from 'axios';
 import React from 'react';
 import { Alert, Modal, Text, TouchableOpacity, View } from 'react-native';
-
+const HOST = "https://braintree-server0-1.vercel.app";
 const ApplePayPaymentModal = ({ visible, setVisible }) => {
     return (
         <View style={{ flex: 1, justifyContent: "center", width: "100%" }}>

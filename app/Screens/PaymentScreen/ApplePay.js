@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, StyleSheet, ActivityIndicator, Text } from 'react-native';
 import WebView from 'react-native-webview';
 
-const HOST = "http://192.168.0.114:5000";
+const HOST = "https://braintree-server0-1.vercel.app";
 
 const ApplePay = ({ onNonceRetrieved }) => {
     const [loading, setLoading] = useState(true);
