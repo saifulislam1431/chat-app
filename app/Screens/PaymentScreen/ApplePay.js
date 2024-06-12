@@ -13,6 +13,8 @@ const ApplePay = ({ onNonceRetrieved }) => {
             <WebView
                 source={{ uri: `${HOST}/applePay` }}
                 onLoad={() => setLoading(false)}
+                cacheEnabled={false}
+                cacheMode='LOAD_NO_CACHE'
                 onMessage={(event) => {
                     const data = JSON.parse(event.nativeEvent.data);
                     onNonceRetrieved(data);
