@@ -3,6 +3,7 @@ import { Alert, Modal, Text, TouchableOpacity, View } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import axios from 'axios';
 import GooglePay from '@/app/Screens/PaymentScreen/GooglePay';
+import GPayTest from '@/app/Screens/PaymentScreen/GPayTest';
 
 const HOST = "https://braintree-server0-1.vercel.app";
 
@@ -60,6 +61,7 @@ const GooglePayPaymentModal = ({ visible, setVisible }) => {
                                     Alert.alert("Payment error", "An error occurred while processing the payment.");
                                 }
                             }} />
+                            {/* <GPayTest /> */}
                         </View>
                     </View>
                 </View>

@@ -6,6 +6,7 @@ import axios from 'axios';
 const HOST = "https://braintree-server0-1.vercel.app";
 
 const Payment = ({ onNonceRetrieved }) => {
+    const customUserAgent = "Mozilla/5.0 (Linux; Android 4.4.4; One Build/KTU84L.H4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.135 Mobile Safari/537.36";
     const [loading, setLoading] = useState(true);
     const [clientToken, setClientToken] = useState(null);
 
@@ -21,6 +22,9 @@ const Payment = ({ onNonceRetrieved }) => {
         };
         fetchClientToken();
     }, []);
+
+    // console.log(clientToken);
+
 
     if (loading) {
         return (
@@ -42,6 +46,10 @@ const Payment = ({ onNonceRetrieved }) => {
                     // console.log(event);
                     onNonceRetrieved(JSON.parse(event.nativeEvent.data));
                 }}
+                webContentsDebuggingEnabled={true}
+                javaScriptEnabled={true}
+                domStorageEnabled={true}
+                userAgent="Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36"
             />
         </View>
     );

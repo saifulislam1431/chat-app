@@ -20,6 +20,7 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
+      "language": "java",
       "package": "com.saiful143.chatzone"
     },
     "web": {
