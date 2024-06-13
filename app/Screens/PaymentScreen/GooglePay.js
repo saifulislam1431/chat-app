@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, StyleSheet, ActivityIndicator, Text } from 'react-native';
+import { View, StyleSheet, ActivityIndicator, Text, Button, Linking } from 'react-native';
 import WebView from 'react-native-webview';
 import axios from 'axios';
 
@@ -9,6 +9,11 @@ const GooglePay = ({ onNonceRetrieved }) => {
     const customUserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36";
     const [loading, setLoading] = useState(true);
     const [clientToken, setClientToken] = useState(null);
+
+
+    const openInBrowser = (url) => {
+        Linking.openURL(url).catch(err => console.error("Failed to open URL:", err));
+    };
 
     useEffect(() => {
         const fetchClientToken = async () => {
@@ -32,24 +37,29 @@ const GooglePay = ({ onNonceRetrieved }) => {
     }
 
     return (
-        <View style={{ flex: 1, width: "100%" }}>
-            <Text style={{
-                fontSize: 24,
-                fontFamily: "syneSemiBold"
-            }}>Please Pay.</Text>
-            <WebView
-                source={{ uri: `${HOST}/googlePay?client_token=${clientToken}&amount=100` }}
-                cacheEnabled={false}
-                cacheMode='LOAD_NO_CACHE'
-                onMessage={(event) => {
-                    onNonceRetrieved(JSON.parse(event.nativeEvent.data));
-                }}
-                webContentsDebuggingEnabled={true}
-                javaScriptEnabled={true}
-                domStorageEnabled={true}
-                userAgent={customUserAgent}
-            />
-        </View>
+        // <View style={{ flex: 1, width: "100%" }}>
+        //     <Text style={{
+        //         fontSize: 24,
+        //         fontFamily: "syneSemiBold"
+        //     }}>Please Pay.</Text>
+
+        //     {/* <Button title="Pay with Google Pay" onPress={() => openInBrowser(`${HOST}/googlePay?client_token=${clientToken}&amount=100`)} /> */}
+        // </View>
+        <WebView
+            source={{ uri: `${HOST}/googlePay?client_token=${clientToken}&amount=100` }}
+            style={{ flex: 1, width: "100%" }}
+            startInLoadingState={true}
+            cacheEnabled={false}
+            cacheMode='LOAD_NO_CACHE'
+            onMessage={(event) => {
+                onNonceRetrieved(JSON.parse(event.nativeEvent.data));
+            }}
+            originWhitelist={['*']}
+            webContentsDebuggingEnabled={true}
+            javaScriptEnabled={true}
+            domStorageEnabled={true}
+            userAgent={customUserAgent}
+        />
     );
 };
 

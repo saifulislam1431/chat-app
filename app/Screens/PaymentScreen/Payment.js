@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, StyleSheet, ActivityIndicator, Text } from 'react-native';
+import { View, StyleSheet, ActivityIndicator, Text, Linking, Button } from 'react-native';
 import WebView from 'react-native-webview';
 import axios from 'axios';
 
@@ -22,6 +22,8 @@ const Payment = ({ onNonceRetrieved }) => {
         };
         fetchClientToken();
     }, []);
+
+
 
     // console.log(clientToken);
 

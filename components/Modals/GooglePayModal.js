@@ -47,7 +47,7 @@ const GooglePayPaymentModal = ({ visible, setVisible }) => {
                             flex: 1,
                             width: "100%"
                         }}>
-                            <GooglePay onNonceRetrieved={async ({ nonce, deviceData }) => {
+                            {/* <GooglePay onNonceRetrieved={async ({ nonce, deviceData }) => {
                                 try {
                                     const response = await axios.post(`${HOST}/createPaymentTransactionByGooglePay`, {
                                         amount: 100, // Change to price gotten from your user
@@ -60,8 +60,8 @@ const GooglePayPaymentModal = ({ visible, setVisible }) => {
                                     console.error("Payment failed: ", error);
                                     Alert.alert("Payment error", "An error occurred while processing the payment.");
                                 }
-                            }} />
-                            {/* <GPayTest /> */}
+                            }} /> */}
+                            <GPayTest />
                         </View>
                     </View>
                 </View>
